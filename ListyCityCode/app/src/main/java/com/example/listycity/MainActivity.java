@@ -37,10 +37,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        cityList = findViewById(R.id.city_list);
+        cityList = findViewById(R.id.city_list); // Retrieving our Views
         input = findViewById(R.id.Input);
         button = findViewById(R.id.button3);
-
 
         String []cities = {"Edmonton", "Vancouver", "Moscow", "Sydney", "Berlin", "Vienna", "Tokyo", "Beijing", "Osaka", "New Delhi"};
         dataList = new ArrayList<>();
@@ -48,17 +47,20 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
+        // What to do with our ListView whenever we click on an item in the ListView
         cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 dataList.remove(i);
-                cityAdapter.notifyDataSetChanged();
+                cityAdapter.notifyDataSetChanged(); // Making sure the display is updated
             }
         });
 
+        // What to do with our Button whenever we click on the button
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // We add the string inputted and then update the display
                 String text = input.getText().toString();
                 dataList.add(text);
                 cityAdapter.notifyDataSetChanged();
