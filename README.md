@@ -9,6 +9,8 @@
 ## References and Resources
 
 List any resources used here, or simply put `N/A` if not applicable.
+1. https://www.geeksforgeeks.org/working-with-the-edittext-in-android/
+
 
 ## Verbal Collaboration
 
